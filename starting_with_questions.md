@@ -30,11 +30,6 @@ limit 5;
 ```
 
 Answer:
-- "United States"	5046730.150000106
-- "United Kingdom"	247238.82000000024
-- "Canada"	164467.01000000015
-- "India"	117786.23000000005
-- "Italy"	91548.51000000004
 
 | Country      | Total Transaction Revenue |
 | ----------- | ----------- |

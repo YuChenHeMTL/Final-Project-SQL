@@ -14,4 +14,17 @@ Describe your QA process and include the SQL queries used to execute it.
 SQL Queries:
 - To find the number of NULL values in each column:
 ```sql
+select 
+    count(*) filter (where "fullVisitorId" is null) as "fullVisitorId_null",
+    count(*) filter (where "visitid" is null) as "visitId_null",
+    count(*) filter (where "date" is null) as "date_null",
+	count(*) filter (where "v2ProductName" is null) as "v2ProductName_null"
+from all_sessions
+```
+
+- To match "fullVisitorId" in all_sessions and analytics:
+```sql
+select 
+    count(*) filter (where "fullVisitorId" in (select "fullVisitorId" from analytics)) as "fullVisitorId_match"
+from all_sessions
 ```

@@ -76,17 +76,6 @@ SET "v2ProductCategory" = null
 WHERE "v2ProductCategory" = '(not set)'
 ```
 
-- To find the percentages of `EVENT` and `PAGE` types:
-```sql
-select distinct("type"),
-cast (count(*) over (partition by "type") as double precision) / cast (count(*) over () as double precision) * 100
-from all_sessions
-```
-
-select "productRefundAmount", count("productRefundAmount")
-from all_sessions
-group by "productRefundAmount"
-
 - Drop `itemQuantity`, `itemRevenue` and `productRefundAmount` columns:
 ```sql
 ALTER TABLE all_sessions DROP COLUMN "itemRevenue"
